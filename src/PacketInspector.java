@@ -9,13 +9,13 @@ import org.jnetpcap.protocol.tcpip.Http.Request;
 import org.jnetpcap.protocol.tcpip.Tcp;
 
 public class PacketInspector implements PcapPacketHandler<Object> {
-	public Logger exceptionLog = Logger.getLogger("debugLogger");
-	static Logger matchLog = Logger.getLogger("maliciousMatchLogger");
+
 	Pcap pcap;
 
 	String ipInfoMatch;
 	String sourceIP;
 	String destinationIP;
+	Logger matchLog = Logger.getLogger(PacketInspector.class);
 
 	@Override
 	public void nextPacket(PcapPacket packet, Object string) {
