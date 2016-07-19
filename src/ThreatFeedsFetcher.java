@@ -30,10 +30,6 @@ public class ThreatFeedsFetcher {
 
 			HttpEntity entity = Response.getEntity();
 
-			System.out.println("----------------------------------------");
-			System.out.println(Response.getStatusLine());
-			System.out.println("----------------------------------------");
-
 			BufferedReader breader;
 
 			try {
@@ -50,14 +46,16 @@ public class ThreatFeedsFetcher {
 
 				}
 			} catch (IOException e) {
-				e.printStackTrace();
+				Main.debugger.debug("", e);
 
 			}
 
 		} catch (ClientProtocolException e) {
-			e.printStackTrace();
+			Main.debugger.debug("", e);
+
 		} catch (IOException e) {
-			e.printStackTrace();
+			Main.debugger.debug("", e);
+
 		}
 	}
 
